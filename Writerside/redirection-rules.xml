@@ -10,4 +10,8 @@
         <description>Created after removal of "docker快速搭建zookeeper集群" from sqw'docs</description>
         <accepts>zookeeper集群搭建.html</accepts>
     </rule>
+    <rule id="338ace63">
+        <description>Created after removal of "starter" from sqw'docs</description>
+        <accepts>starter.html</accepts>
+    </rule>
 </rules>

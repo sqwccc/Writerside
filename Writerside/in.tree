@@ -8,5 +8,4 @@
 
     <toc-element topic="Kafka.md"/>
     <toc-element topic="zookeeper集群.md"/>
-    <toc-element topic="starter.md"/>
 </instance-profile>

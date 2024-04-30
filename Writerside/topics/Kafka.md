@@ -27,10 +27,10 @@ docker rmi docker.io/sheepkiller/kafka-manager
 ```Shell
 # 升级 pip
 pip3 install --upgrade pip
-
+    
 # 指定 docker-compose 版本安装
 pip install docker-compose==1.22
-
+    
 # 验证是否安装成功，有返回值，说明安装成功
 docker-compose -v
 ```

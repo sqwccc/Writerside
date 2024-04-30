@@ -1,4 +1,4 @@
-# 开始超级大爆
+# starter
 
 <!--Writerside adds this topic when you create a new documentation project.
 You can use it as a sandbox to play with Writerside features, and remove it from the TOC when you don't need it anymore.-->
@@ -68,6 +68,7 @@ Before you do, please read our [Code of conduct](https://plugins.jetbrains.com/p
 We assume that you’ve read and acknowledged it before joining.
 
 You can also always email us at [writerside@jetbrains.com](mailto:writerside@jetbrains.com).
+
 
 <seealso>
     <category ref="wrs">

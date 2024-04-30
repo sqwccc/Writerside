@@ -4,8 +4,8 @@
 
 <instance-profile id="s"
                  name="sqw'docs"
-                 start-page="starter.md">
+                 start-page="Kafka.md">
 
+    <toc-element topic="Kafka.md"/>
     <toc-element topic="starter.md"/>
-    <toc-element topic="Empty-MD-Topic.md"/>
 </instance-profile>

@@ -6,6 +6,9 @@
                  name="sqw'docs"
                  start-page="Kafka.md">
 
-    <toc-element topic="Kafka.md"/>
-    <toc-element topic="zookeeper集群.md"/>
+    <toc-element topic="Mqtt.md"/>
+    <toc-element topic="Modbus.md"/>
+    <toc-element topic="Kafka.md">
+    </toc-element>
+    <toc-element topic="Empty-MD-Topic.md"/>
 </instance-profile>

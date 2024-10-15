@@ -14,4 +14,12 @@
         <description>Created after removal of "starter" from sqw'docs</description>
         <accepts>starter.html</accepts>
     </rule>
+    <rule id="4e3561c">
+        <description>Created after removal of "ClickHouse" from sqw'docs</description>
+        <accepts>ClickHouse.html</accepts>
+    </rule>
+    <rule id="66884dda">
+        <description>Created after removal of "Zookeeper集群" from sqw'docs</description>
+        <accepts>zookeeper集群.html</accepts>
+    </rule>
 </rules>

@@ -9,7 +9,7 @@
 
 ## 准备工作
 
-1. 拉取zookeeper镜像
+* 拉取zookeeper镜像
 
     <code-block lang="shell">
     docker pull zookeeper
@@ -17,7 +17,7 @@
     docker rmi docker.io/zookeeper
     </code-block>
 
-2. 安装docker-compose工具
+* 安装docker-compose工具
 
     <code-block lang="shell">
     # 升级 pip
@@ -28,7 +28,7 @@
     docker-compose -v
     </code-block>
 
-3. 创建相关文件夹
+* 创建相关文件夹
 
     <code-block lang="shell">
     mkdir -p /data/docker-compose/zookeeper
@@ -96,22 +96,19 @@
           - /data/docker-data/zookeeper/zoo3/data:/data
           - /data/docker-data/zookeeper/zoo3/datalog:/datalog
     ```
-    {collapsible="true" collapsed-title="docker-compose.yml"}
-
+   {collapsible="true" collapsed-title="docker-compose.yml"}
 2. 执行构建集群
 
     <code-block lang="shell">
     cd /data/docker-compose/zookeeper
     docker-compose up -d
     </code-block>
-
 3. 进入容器验证集群是否构建成功
 
     <code-block lang="shell">
     docker exec -it zoo1 bash
     zkServer.sh status
     </code-block>
-
 4. 返回下面信息，说明集群搭建成功:
 
     <code-block lang="shell">

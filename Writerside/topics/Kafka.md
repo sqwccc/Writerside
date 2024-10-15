@@ -48,7 +48,7 @@ docker network create --driver bridge zookeeper_kafka_net
 
 构建zookeeper集群
 
-kafka集群需要用到zookeeper集群，因此需要先构建zookeeper集群，请查看文章[zookeeper集群构建](zookeeper集群.md)
+kafka集群需要用到zookeeper集群，因此需要先构建zookeeper集群，请查看文章[Zookeeper集群搭建](Zookeeper.md)
 
 ## 使用docker-compose编排kafka集群
 

@@ -10,5 +10,5 @@
     <toc-element topic="Modbus.md"/>
     <toc-element topic="Kafka.md">
     </toc-element>
-    <toc-element topic="Empty-MD-Topic.md"/>
+    <toc-element topic="Zookeeper.md"/>
 </instance-profile>

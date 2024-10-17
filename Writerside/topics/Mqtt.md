@@ -103,10 +103,12 @@ MQTT 的基本架构：
                client.subscribe(ConstantAC.REPLY_TOPIC);
                client.subscribe(ConstantAC.REPLY_TOPIC_SPLIT);
                log.info("订阅佛山设备信息完毕");
+               isConnected = true;
+               retryCount = 0; // 重置重试计数
            } catch (MqttException e) {
                log.error("发生mqtt错误，错误信息{}", e.getMessage());
                // 可以在这里实现重试逻辑，例如延迟后重试
-               scheduleReconnect();
+               isConnected = false;
            }
        }
    

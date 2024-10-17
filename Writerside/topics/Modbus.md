@@ -58,21 +58,13 @@ Modbus 通信基于主从（Master-Slave）架构：
 
 <table>
 <tr><td>功能码</td><td>描述</td></tr>
-<tr><td>0x01</td><td>读取线圈状态（Read Coils）</td></tr>
-<tr><td>0x02</td><td>读取离散输入状态（Read Discrete Inputs）</td></tr>
-<tr><td>0x03</td><td>读取保持寄存器（Read Holding Registers）</td></tr>
-<tr><td>0x04</td><td>读取输入寄存器（Read Input Registers）</td></tr>
-<tr><td>0x05</td><td>写单个线圈（Write Single Coil）</td></tr>
+<tr><td>0x03</td><td>读取保持寄存器（Read Holding Registers）可读多个或者单个寄存器内容</td></tr>
 <tr><td>0x06</td><td>写单个保持寄存器（Write Single Register）</td></tr>
-<tr><td>0x0F</td><td>写多个线圈（Write Multiple Coils）</td></tr>
-<tr><td>0x11</td><td>读设备识别（Read Device Identification）</td></tr>
+<tr><td>0x10</td><td>写多个保持寄存器（Write Single Register）</td></tr>
+<tr><td>0x11</td><td>读/写多个保持寄存器（Read Device Identification）</td></tr>
 </table>
 
-
-
-- 示例：
-读取保持寄存器：0x03
-写单个线圈：0x05
+<note>以上仅列举部分常用的功能码</note>
 
 ### 数据域（Data Field）
 - 长度：可变（N 字节）
@@ -81,8 +73,8 @@ Modbus 通信基于主从（Master-Slave）架构：
 
 <tabs>
     <tab id="a" title="功能码 0x03">
-      <p>读取保持寄存器请求</p>
-       <p> 起始地址 (2 bytes) + 寄存器数量 (2 bytes)</p>
+      <p>读取保持寄存器请求：起始地址 (2 bytes) + 寄存器数量N (2 bytes)</p>
+      <p>回复：字节数 2N (1 byte) + 寄存器的值 (2N bytes)</p>
         示例:
          <list>
          <li>起始地址：0x000A（地址 10）
@@ -90,23 +82,23 @@ Modbus 通信基于主从（Master-Slave）架构：
          <li>寄存器数量：0x0002（读取 2 个寄存器）
          </li>
          </list>
-        <p>报文数据域：00 0A 00 02</p>
+        <p>报文数据域：000A 0002</p>
+        <p>回复数据域：0004 0010 0235</p>
     </tab>
     <tab id="b" title="功能码 0x06">
-         <p>写单个保持寄存器请求</p>
-       <p> 寄存器地址 (2 bytes) + 写入值 (2 bytes) </p>
+         <p>写单个保持寄存器请求：寄存器地址 (2 bytes) + 写入值 (2 bytes) </p>
+         <p>回复： 和请求保持一致</p>
         示例:
          <list>
-         <li>寄存器地址：0x0005（地址 5）（地址 10）
+         <li>寄存器地址：0x0005（地址 5）
          </li>
-         <li>写入值：0x00FF（255）（读取 2 个寄存器）
+         <li>写入值：0x00FF（255）
          </li>
          </list>
-        <p>报文数据域：00 05 00 FF</p>
+        <p>报文数据域：0005 00FF</p>
     </tab>
     <tab id="c" title="功能码 0x10">
-         <p>写多个保持寄存器请求</p>
-       <p> 起始地址(2 bytes) + 寄存器数量N (2 bytes) + 字节计数2XN (1 byte) + 寄存器值（2xN bytes） </p>
+         <p>写多个保持寄存器请求：起始地址(2 bytes) + 寄存器数量N (2 bytes) + 字节计数2XN (1 byte) + 寄存器值（2xN bytes） </p>
         <p>回应：起始地址(2 bytes) + 寄存器数量N (2 bytes)</p>
     </tab>
 </tabs>

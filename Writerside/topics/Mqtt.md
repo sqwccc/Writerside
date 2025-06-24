@@ -60,7 +60,7 @@ MQTT 的基本架构：
    ```
    * broker: tcp://ip:port
    * username: admin
-     * password: password
+   * password: password
 
 3. 创建一个客户端管理类，用于初始化连接和管理客户端，并回调处理连接丢失、消息到达、消息发送
 
@@ -119,9 +119,14 @@ MQTT 的基本架构：
        }
    
        @Override
-       public void messageArrived(String topic, MqttMessage message) throws Exception {
-           // 处理接收到的消息
+       public void messageArrived(String topic, MqttMessage message) {
+           // 需要处理任何处理消息时候的异常 否则会导致客户端断开连接
+           try{
+              // 处理接收到的消息
            log.info("收到消息 - 主题: {}, 消息: {}", topic, new String(message.getPayload()));
+           } catch (Exception e) {
+               log.error("处理消息时发生错误: {}", e.getMessage());
+           }
        }
    
        @Override
